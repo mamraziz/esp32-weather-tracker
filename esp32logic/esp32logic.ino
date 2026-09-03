@@ -34,7 +34,7 @@ void loop() {
   hum = analogRead(humS);
   Serial.println(ldr + temp + hum); // delete this
 
-  http.begin("http://192.168.1.11:3000/readings");
+  http.begin("http://192.168.1.3:3000/readings");
   http.addHeader("Content-Type", "application/json");
   String body = "{\"ldr\": " + String(ldr) + ", \"temp\": " + String(temp) + ", \"hum\": " + String(hum) + "}";
   int responseCode = http.POST(body);
